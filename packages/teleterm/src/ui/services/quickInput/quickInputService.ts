@@ -27,7 +27,7 @@ type State = {
 };
 
 export class QuickInputService extends Store<State> {
-  quickCommandPicker: pickers.QuickCommandPicker;
+  private quickCommandPicker: pickers.QuickCommandPicker;
   lastFocused: WeakRef<HTMLElement>;
 
   constructor(

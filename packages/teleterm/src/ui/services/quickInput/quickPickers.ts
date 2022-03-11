@@ -139,7 +139,7 @@ export class QuickCommandPicker implements QuickInputPicker {
 
 export class QuickTshSshPicker implements QuickInputPicker {
   // Taken from https://unix.stackexchange.com/a/435120
-  sshLoginRegex = /^[a-z_]([a-z0-9_-]{0,31}|[a-z0-9_-]{0,30}\$)$/;
+  private sshLoginRegex = /^[a-z_]([a-z0-9_-]{0,31}|[a-z0-9_-]{0,30}\$)$/;
 
   constructor(
     private launcher: CommandLauncher,
