@@ -45,6 +45,31 @@ export default function useQuickInput() {
   const onPickSuggestion = (index: number) => {
     if (!hasSuggestions) {
       return;
+
+      // TODO: Choose command to launch.
+      //
+      // For tsh ssh: something like connect in useServerConnecto
+      //
+      //     documentsService.createTshNodeDocument(serverUri)
+      //     doc.title =
+      //     doc.login =
+      //     doc.extraOptions = (TODO: Pass those options to pty service)
+      //     documentsService.add(doc)
+      //
+      // For proxy db: useGatewayCreate
+      // https://github.com/gravitational/webapps/blob/744b6a89a43a241840f59376c0b39eae82d2bf40/packages/teleterm/src/ui/commandLauncher.ts#L27-L60
+      //
+      //     ctx.clustersService.createGateway({ targetUri, ...params })
+      //     documentsService.createGatewayDocument({})
+      //
+      // For any other command:
+      //
+      //     ctx.docsService.openNewTerminal()
+      //     TODO: Needs support for initCommand
+      //     https://gravitational.slack.com/archives/D030VHNF7HB/p1645445756738069
+      //
+      // So to some extent, we need to always create a new document here, but sometimes it involves
+      // doing some extra stuff beforehand (like with the gateway).
     }
 
     const suggestion = autocompleteResult.suggestions[index];
