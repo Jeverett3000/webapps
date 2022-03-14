@@ -68,7 +68,7 @@ export default function useQuickInput() {
   });
 
   // Reset active suggestion when the suggestion list changes.
-  // We extract just the tokens and stringify the list to avoid stringify big objects.
+  // We extract just the tokens and stringify the list to avoid stringifying big objects.
   // See https://github.com/facebook/react/issues/14476#issuecomment-471199055
   useEffect(() => {
     setActiveSuggestion(0);
