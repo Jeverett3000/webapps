@@ -17,6 +17,7 @@ limitations under the License.
 import React from 'react';
 import styled from 'styled-components';
 import { Label, Box, Text, Flex } from 'design';
+import { makeLabelTag } from 'teleport/components/formatters';
 import * as types from 'teleterm/ui/services/quickInput/types';
 
 const QuickInputList = React.forwardRef<HTMLElement, Props>((props, ref) => {
@@ -81,7 +82,7 @@ function ServerItem(props: { item: types.SuggestionServer }) {
   const { hostname, uri, labelsList } = props.item.data;
   const $labels = labelsList.map((label, index) => (
     <Label mr="1" key={index} kind="secondary">
-      {label.name}: {label.value}
+      {makeLabelTag(label)}
     </Label>
   ));
 
